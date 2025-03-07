@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 
 :root {
@@ -26,6 +27,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+ /*
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -72,7 +74,6 @@ body {
     --ring: 216 34% 17%;
   }
 
-  /* Blue Theme */
   .blue {
     --background: 210 50% 98%;
     --foreground: 222 47% 11%;
@@ -95,7 +96,6 @@ body {
     --ring: 221 83% 53%;
   }
 
-  /* Green Theme */
   .green {
     --background: 150 50% 98%;
     --foreground: 222 47% 11%;
@@ -118,7 +118,6 @@ body {
     --ring: 142 76% 36%;
   }
 
-  /* Purple Theme - New in v4 update */
   .purple {
     --background: 270 50% 98%;
     --foreground: 272 47% 11%;
@@ -141,3 +140,4 @@ body {
     --ring: 271 83% 53%;
   }
 }
+*/
