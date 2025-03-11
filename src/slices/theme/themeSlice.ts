@@ -13,16 +13,19 @@ const initialState: ThemeSliceState = {
 export const themeSlice = createAppSlice({
   name: "theme",
   initialState,
-  reducers: {
-    toggleTheme: (state) => {
-      state.mode = state.mode === "light" ? "dark" : "light";
-    },
-  },
+  reducers: (create) => ({
+    initializeDefaultTheme : create.reducer((state) => {
+      state.mode = "dark";
+    }),
+    toggleTheme: create.reducer((state) => {
+        state.mode === "light" ? "dark" : "light"
+    }),
+}),
   selectors: {
     selectCurrentTheme: (theme) => theme.mode,
   }
 });
 
-export const { toggleTheme } = themeSlice.actions;
+export const { initializeDefaultTheme, toggleTheme } = themeSlice.actions;
 
 export const { selectCurrentTheme } = themeSlice.selectors;
