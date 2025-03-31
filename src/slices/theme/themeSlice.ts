@@ -17,8 +17,11 @@ export const themeSlice = createAppSlice({
     initializeDefaultTheme : create.reducer((state) => {
       state.mode = "dark";
     }),
-    toggleTheme: create.reducer((state) => {
-        state.mode === "light" ? "dark" : "light"
+    toggleTheme: create.reducer((state, action: PayloadAction<string>) => {
+      console.log("action.payload", action.payload);
+      console.log("state.mode", state.mode);
+        state.mode = action.payload ?? "green";
+        document.documentElement.dataset.theme = action.payload;
     }),
 }),
   selectors: {
